@@ -1,5 +1,8 @@
 Store::Application.routes.draw do
-  root :to => 'admins#index'
+
+  get 'login', to: 'sessions#new', as: 'login'
+
+  root :to => 'sessions#new'
   get "sessions/new"
   resources :admins
   resources :sessions

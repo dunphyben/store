@@ -18,16 +18,21 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
+  gem 'less-rails'
+  gem 'therubyracer'
 end
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'ffaker'
+  gem 'faker'
+  gem 'launchy'
 
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'shoulda-callback-matchers'
+  gem 'database_cleaner'
 end
