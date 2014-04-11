@@ -7,10 +7,19 @@ class SessionsController < ApplicationController
     if admin && admin.authenticate(params[:password])
       session[:admin_id] = admin.id
       flash.now.alert = "Admin logged in successfully"
-      redirect_to root_path
+      render 'admins/show'
     else
       flash.now.alert = "Email or password is invalid"
       render "new"
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    render 'show', notice: "Logged out!"
+  end
+
+  def show
+    @admin = Admin.find(params[:id])
   end
 end
