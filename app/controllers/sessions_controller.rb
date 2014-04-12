@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     render 'show', notice: "Logged out!"
+    render 'new'
   end
 
   def show
